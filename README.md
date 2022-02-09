@@ -9,4 +9,5 @@
 ## Instructions
 
 1. Run `sbt` in your console.
-2. Invoke `run`. You should see "Hello world!" printed.
+2. Invoke `fastLinkJS`.
+3. Open `index.html` in your browser. 
