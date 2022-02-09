@@ -1,0 +1,22 @@
+{
+  "name": "coursematch",
+  "version": "1.0.0",
+  "description": "## Dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tserg/coursematch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tserg/coursematch/issues"
+  },
+  "homepage": "https://github.com/tserg/coursematch#readme",
+  "dependencies": {
+    "jsdom": "^19.0.0"
+  }
+}

@@ -6,6 +6,10 @@
 - Node.js
 - Scala
 
+### Install npm modules
+
+Run `npm install`.
+
 ## Instructions
 
 ### Run the application
@@ -16,3 +20,8 @@
 
 ### Linting
 1. Run `sbt scalafmt` in your console.
+
+## Testing
+
+1. Run `sbt` in your console.
+2. Invoke `test`.
