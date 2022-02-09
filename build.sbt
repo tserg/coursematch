@@ -1,7 +1,7 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "Coursematch"
-scalaVersion := "2.13.6"
+scalaVersion := "3.1.1"
 
 // This is an application with a main method
 scalaJSUseMainModuleInitializer := true
