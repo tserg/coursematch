@@ -1,0 +1,52 @@
+@(widgets: Seq[Widget], form: Form[ListingForm.UserData], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+  @main("Widgets") {
+
+    <h1>Widgets</h1>
+
+    @* Flash shows updates to a page *@
+    @request.flash.data.map{ case (name, value) =>
+      <div>@name: @value</div>
+    }
+
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Modules</th>
+      </thead>
+      <tbody>
+      @for(w <- widgets) {
+        <tr>
+          <td>@w.name</td>
+          <td>@w.module1</td>
+          <td>@w.module2</td>
+          <td>@w.module3</td>
+          <td>@w.module4</td>
+        </tr>
+      }
+      </tbody>
+    </table>
+
+    <hr/>
+
+    @* Global errors are not tied to any particular form field *@
+    @if(form.hasGlobalErrors) {
+      @form.globalErrors.map { error: FormError =>
+        <div>
+          @error.key: @error.message
+        </div>
+      }
+    }
+
+    @helper.form(postUrl) {
+      @helper.CSRF.formField
+
+      @helper.inputText(form("name"))
+
+      @helper.inputText(form("module1"))
+      @helper.inputText(form("module2"))
+      @helper.inputText(form("module3"))
+      @helper.inputText(form("module4"))
+
+      <button>Create widget</button>
+    }
+  }

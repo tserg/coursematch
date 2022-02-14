@@ -1,27 +1,10 @@
-# Course-match
+# Coursematch
 
-## Dependencies
+## Requirements
 
-- sbt
-- Node.js
-- Scala
+- Play Framework
 
-### Install npm modules
+## Running locally
 
-Run `npm install`.
-
-## Instructions
-
-### Run the application
-
-1. Run `sbt` in your console.
-2. Invoke `fastLinkJS`.
-3. Open `index.html` in your browser. 
-
-### Linting
-1. Run `sbt scalafmt` in your console.
-
-## Testing
-
-1. Run `sbt` in your console.
-2. Invoke `test`.
+- From the `/coursematch/coursematch` directory, invoke `sbt run`.
+- Go to `http://localhost:9000`.
