@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:scroll-into-view-if-needed_sjs1_2.13:2.2.29-0cec87:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/scroll-into-view-if-needed_sjs1_2.13/2.2.29-0cec87/jars/scroll-into-view-if-needed_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/scroll-into-view-if-needed_sjs1_2.13/2.2.29-0cec87/srcs/scroll-into-view-if-needed_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

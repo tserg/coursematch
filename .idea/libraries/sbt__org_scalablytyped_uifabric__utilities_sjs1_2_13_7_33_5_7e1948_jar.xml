@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:uifabric__utilities_sjs1_2.13:7.33.5-7e1948:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/uifabric__utilities_sjs1_2.13/7.33.5-7e1948/jars/uifabric__utilities_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/uifabric__utilities_sjs1_2.13/7.33.5-7e1948/srcs/uifabric__utilities_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

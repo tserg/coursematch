@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="root [file:/C:/ScalaProject/IT5001/course_match/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
+    <output url="file://$MODULE_DIR$/../../target/scala-2.13/classes" />
+    <output-test url="file://$MODULE_DIR$/../../target/scala-2.13/test-classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/scala" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/scala" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sbt: com.olvind:scalablytyped-runtime_sjs1_2.13:2.4.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: me.shadaj:slinky-core_sjs1_2.13:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: me.shadaj:slinky-hot_sjs1_2.13:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: me.shadaj:slinky-readwrite_sjs1_2.13:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: me.shadaj:slinky-web_sjs1_2.13:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.java.dev.jna:jna:5.9.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.jline:jline:3.21.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-js:scalajs-dom_sjs1_2.13:2.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-js:scalajs-library_2.13:1.8.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-js:scalajs-test-bridge_2.13:1.8.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-js:scalajs-test-interface_2.13:1.8.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-compiler:2.13.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.13.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:ant-design__icons-svg_sjs1_2.13:4.2.1-06e789:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:ant-design__icons_sjs1_2.13:4.7.0-99091c:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:ant-design__react-slick_sjs1_2.13:0.27.14-fd6439:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:antd_sjs1_2.13:4.8.2-ad7874:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:csstype_sjs1_2.13:2.6.19-aa08cf:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:dayjs_sjs1_2.13:1.10.7-2e5818:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__date-time-utilities_sjs1_2.13:7.9.1-e7a6cc:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__dom-utilities_sjs1_2.13:1.1.2-002ce5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__react-focus_sjs1_2.13:7.18.1-f1b14d:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__react-window-provider_sjs1_2.13:1.0.2-ce2e70:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__react_sjs1_2.13:7.149.2-89279d:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:fluentui__theme_sjs1_2.13:1.7.4-aa5a8f:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:history_sjs1_2.13:5.2.0-771736:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:moment_sjs1_2.13:2.29.1-57685d:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:office-ui-fabric-react_sjs1_2.13:7.182.0-f907f5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:prop-types_sjs1_2.13:15.7.4-d6fc95:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-dialog_sjs1_2.13:8.4.6-e94f23:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-field-form_sjs1_2.13:1.13.2-7351d6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-image_sjs1_2.13:4.0.1-e51838:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-mentions_sjs1_2.13:1.5.3-3d8ac2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-menu_sjs1_2.13:8.8.3-f792eb:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-motion_sjs1_2.13:2.4.4-24b8b8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-notification_sjs1_2.13:4.5.7-b0c736:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-picker_sjs1_2.13:2.3.4-6590b2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-select_sjs1_2.13:11.4.2-3122d1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-table_sjs1_2.13:7.11.3-3d6d07:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-tabs_sjs1_2.13:11.7.3-5dd060:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-textarea_sjs1_2.13:0.3.7-e6fce8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-tooltip_sjs1_2.13:5.0.2-0fd5fa:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-tree-select_sjs1_2.13:4.1.3-afb4d0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-tree_sjs1_2.13:3.11.0-fa0bd3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-trigger_sjs1_2.13:5.0.9-3bb0f9:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:rc-util_sjs1_2.13:5.18.0-f715df:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:react-dom_sjs1_2.13:16.9.8-b3863c:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:react-router-dom_sjs1_2.13:5.1.2-774002:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:react-router_sjs1_2.13:5.1.2-8ac7b9:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:react_sjs1_2.13:16.9.42-3189d3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:scroll-into-view-if-needed_sjs1_2.13:2.2.29-0cec87:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:std_sjs1_2.13:4.3-9229f6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__foundation_sjs1_2.13:7.10.1-594146:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__icons_sjs1_2.13:7.6.2-baa2af:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__merge-styles_sjs1_2.13:7.19.2-5efbdf:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__react-hooks_sjs1_2.13:7.14.0-5f39c1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__styling_sjs1_2.13:7.20.0-369764:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalablytyped:uifabric__utilities_sjs1_2.13:7.33.5-7e1948:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-core_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-diagrams_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-featurespec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-flatspec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-freespec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-funspec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-funsuite_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-matchers-core_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-mustmatchers_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-propspec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-shouldmatchers_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest-wordspec_sjs1_2.13:3.2.9:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_sjs1_2.13:3.2.9:jar" level="project" />
+  </component>
+</module>

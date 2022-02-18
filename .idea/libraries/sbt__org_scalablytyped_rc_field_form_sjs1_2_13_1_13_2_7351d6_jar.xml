@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:rc-field-form_sjs1_2.13:1.13.2-7351d6:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/rc-field-form_sjs1_2.13/1.13.2-7351d6/jars/rc-field-form_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/rc-field-form_sjs1_2.13/1.13.2-7351d6/srcs/rc-field-form_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

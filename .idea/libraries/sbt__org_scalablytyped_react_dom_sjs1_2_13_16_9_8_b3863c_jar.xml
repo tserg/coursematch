@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:react-dom_sjs1_2.13:16.9.8-b3863c:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/react-dom_sjs1_2.13/16.9.8-b3863c/jars/react-dom_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/react-dom_sjs1_2.13/16.9.8-b3863c/srcs/react-dom_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

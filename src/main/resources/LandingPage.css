@@ -1,0 +1,78 @@
+.page-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Button-Style {
+    width: 20rem;
+    padding: 20px 10px;
+    font-size: 18px;
+}
+
+.SearchBar-Style {
+    width: 250px;
+    margin-left: 80px;
+    height: 40px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+
+}
+
+.content-container .left {
+    width: 80%;
+}
+
+.content-container .left .inner-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-container .right {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.content-container .right span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    background-color: #bbbbbb;
+    width: 80%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.table-container {
+    margin-top: 80px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+Cant find the correct syntax to change the CSS using the inbuilt antd CSS package.
+Inserting custom CSS to specifically target table header. (It works but not ideal)
+*/
+
+thead[class*="ant-table-thead"] th{
+    background-color: #B2B1B9 !important;
+    font-size: 18px;
+}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:fluentui__react-window-provider_sjs1_2.13:1.0.2-ce2e70:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/fluentui__react-window-provider_sjs1_2.13/1.0.2-ce2e70/jars/fluentui__react-window-provider_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/fluentui__react-window-provider_sjs1_2.13/1.0.2-ce2e70/srcs/fluentui__react-window-provider_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

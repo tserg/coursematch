@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:rc-table_sjs1_2.13:7.11.3-3d6d07:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/rc-table_sjs1_2.13/7.11.3-3d6d07/jars/rc-table_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/rc-table_sjs1_2.13/7.11.3-3d6d07/srcs/rc-table_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

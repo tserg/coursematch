@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:prop-types_sjs1_2.13:15.7.4-d6fc95:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/prop-types_sjs1_2.13/15.7.4-d6fc95/jars/prop-types_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/prop-types_sjs1_2.13/15.7.4-d6fc95/srcs/prop-types_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

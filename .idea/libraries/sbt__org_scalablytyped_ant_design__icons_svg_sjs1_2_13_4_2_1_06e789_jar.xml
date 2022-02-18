@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.scalablytyped:ant-design__icons-svg_sjs1_2.13:4.2.1-06e789:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/ant-design__icons-svg_sjs1_2.13/4.2.1-06e789/jars/ant-design__icons-svg_sjs1_2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/local/org.scalablytyped/ant-design__icons-svg_sjs1_2.13/4.2.1-06e789/srcs/ant-design__icons-svg_sjs1_2.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
