@@ -28,6 +28,7 @@ lazy val slinkyBasics: Project => Project =
     requireJsDomEnv in Test := true,
     addCommandAlias("dev", ";fastOptJS::startWebpackDevServer;~fastOptJS"),
     addCommandAlias("build", "fullOptJS::webpack"),
+    scalacOptions ++= ScalacOptions.flags,
     stIgnore += "react-proxy",
     libraryDependencies ++= Seq(
       "me.shadaj" %%% "slinky-web" % "0.7.0",
@@ -56,6 +57,7 @@ lazy val slinkyBasics: Project => Project =
 
 lazy val antdSettings: Project => Project =
   _.settings(
+    useYarn:= true,
     Compile / npmDependencies ++= Seq(
       "antd" -> "4.8.2"
     )
@@ -64,6 +66,7 @@ lazy val antdSettings: Project => Project =
 
 lazy val fluentUI: Project => Project =
   _.settings(
+    useYarn:= true,
     stFlavour := Flavour.Slinky,
     stReactEnableTreeShaking := Selection.All,
     Compile / npmDependencies ++= Seq(
@@ -73,6 +76,7 @@ lazy val fluentUI: Project => Project =
 
 lazy val react_dom: Project => Project =
   _.settings(
+    useYarn:= true,
     stFlavour := Flavour.Slinky,
     stReactEnableTreeShaking := Selection.All,
     Compile / npmDependencies ++= Seq(
@@ -82,15 +86,6 @@ lazy val react_dom: Project => Project =
       "@types/react-router-dom" -> "5.1.2"// note 5.1.4 did weird things to the Link component
     )
   )
-
-lazy val antd: Project => Project =
-  _.settings(
-    useYarn := true,
-    stFlavour := Flavour.Slinky,
-    Compile / npmDependencies ++= Seq("antd" -> "4.8.2")
-  )
-
-
 
 lazy val webpackSettings: Project => Project =
   _.settings(

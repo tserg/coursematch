@@ -11,8 +11,14 @@
       </plugins>
     </profile>
     <profile name="sbt 3" modules="course_match">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <option name="explainTypeErrors" value="true" />
       <parameters>
         <parameter value="-Ymacro-annotations" />
+        <parameter value="-encoding" />
+        <parameter value="utf-8" />
       </parameters>
       <plugins>
         <plugin path="C:\Users\chris\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-js\scalajs-compiler_2.13.8\1.8.0\scalajs-compiler_2.13.8-1.8.0.jar" />
