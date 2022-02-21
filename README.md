@@ -1,5 +1,10 @@
 # Coursematch
 
+## Dependencies
+
+- Yarn 
+- sbt
+
 ## Development
 
 1. Run `sbt build`.
@@ -25,3 +30,9 @@
   ```
   export NODE_OPTIONS=--openssl-legacy-provider
   ```
+
+### Linting
+
+- Run `sbt scalafmt` to run the linter and fix formatting issues.
+
+
