@@ -1,4 +1,5 @@
-./bsp
+.bsp/
+.idea/
 build/
 null/
 target/
