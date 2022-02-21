@@ -29,64 +29,64 @@ object AntCSS extends js.Any
 @react
 object LandingPage {
 
-  case class Props(username: String , mods: Seq[(String, String ,String , String ,String)])
+  case class Props(
+      username: String,
+      mods: Seq[(String, String, String, String, String)]
+  )
 
-  //=================CSS=========================
+  // =================CSS=========================
 
   val landingPagecss = LandingPageCSS
   val antCss = AntCSS
 
-
-  //=================Button Text==========================
+  // =================Button Text==========================
   val data = Seq(
-    ("AY2021-22 Semester 1" , 1) ,
-    ("AY2021-22 Semester 2" , 2) ,
-    ("AY2021-23 Semester 1" , 3) ,
+    ("AY2021-22 Semester 1", 1),
+    ("AY2021-22 Semester 2", 2),
+    ("AY2021-23 Semester 1", 3)
   )
 
-  //==================Simulated Table Data============================
+  // ==================Simulated Table Data============================
   // Ideally this should be pulled from a database but we are hardcoding it for now.
 
-  //Table Data for AY2021-22 Semester 1
+  // Table Data for AY2021-22 Semester 1
   val tableData1 = Seq(
-    ("John Tan" , "CS5219" , "IT5001A" , "IT5100B", "-"),
-    ("Kelly Chia" , "CS5219" , "IT5001A" , "IT5100B" , "CS5218"),
-    ("Lee James" , "CS5100" , "CS5200" , "-" , "-"),
-    ("Sue" , "IT5100A" , "IT5100B", "-" , "-")
+    ("John Tan", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Kelly Chia", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Lee James", "CS5100", "CS5200", "-", "-"),
+    ("Sue", "IT5100A", "IT5100B", "-", "-")
   )
 
-  //Table Data for AY2021-22 Semester 2
+  // Table Data for AY2021-22 Semester 2
   val tableData2 = Seq(
-    ("Chris1" , "CS5219" , "IT5001A" , "IT5100B", "-"),
-    ("Gary1" , "CS5219" , "IT5001A" , "IT5100B" , "CS5218"),
-    ("Felicia1" , "CS5100" , "CS5200" , "-" , "-"),
+    ("Chris1", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Gary1", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Felicia1", "CS5100", "CS5200", "-", "-")
   )
 
-  //Table Data for AY2021-23 Semester 1
+  // Table Data for AY2021-23 Semester 1
   val tableData3 = Seq(
-    ("John Tan" , "CS5219" , "IT5001A" , "IT5100B", "-"),
-    ("Kelly Chia" , "CS5219" , "IT5001A" , "IT5100B" , "CS5218"),
-    ("Lee James" , "CS5100" , "CS5200" , "-" , "-"),
-    ("Sue" , "IT5100A" , "IT5100B", "-" , "-"),
-    ("Chris1" , "CS5219" , "IT5001A" , "IT5100B", "-"),
-    ("Gary1" , "CS5219" , "IT5001A" , "IT5100B" , "CS5218"),
-    ("Felicia1" , "CS5100" , "CS5200" , "-" , "-"),
+    ("John Tan", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Kelly Chia", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Lee James", "CS5100", "CS5200", "-", "-"),
+    ("Sue", "IT5100A", "IT5100B", "-", "-"),
+    ("Chris1", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Gary1", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Felicia1", "CS5100", "CS5200", "-", "-")
   )
 
-
-  //====================React Hooks Component==================
+  // ====================React Hooks Component==================
 
   val component = FunctionalComponent[Props] { props =>
+    // ===============React State Hooks==========================
 
-    //===============React State Hooks==========================
+    val (tableData, updateTableData) = useState(tableData1)
+    val (tableData_1, updateTableData1) = useState(tableData1)
+    val (tableData_2, updateTableData2) = useState(tableData2)
+    val (tableData_3, updateTableData3) = useState(tableData3)
 
-    val (tableData , updateTableData) = useState(tableData1)
-    val (tableData_1 , updateTableData1) = useState(tableData1)
-    val (tableData_2 , updateTableData2) = useState(tableData2)
-    val (tableData_3 , updateTableData3) = useState(tableData3)
-
-    //This will set the data that are to be shown in the table
-    def setTableData(num: Int): Unit  = {
+    // This will set the data that are to be shown in the table
+    def setTableData(num: Int): Unit = {
       num match {
         case 1 => updateTableData(tableData_1)
         case 2 => updateTableData(tableData_2)
@@ -108,38 +108,47 @@ object LandingPage {
       },
       Seq.empty
     )
-    //====================welcome text=========================
+    // ====================welcome text=========================
     val welcome = h1("Welcome to Mcomp Course - Match")
 
-    //====================Buttons===============================
+    // ====================Buttons===============================
 
-    //Set gaps between button - Basically equivalent to margin-bottom in CSS
+    // Set gaps between button - Basically equivalent to margin-bottom in CSS
     val stackTokens = IStackTokens().setChildrenGap(10)
 
-    //Output 3 buttons
-    //Depending on which button is selected, the data in the table will be updated
+    // Output 3 buttons
+    // Depending on which button is selected, the data in the table will be updated
     val semesterButton = FluentUi.Stack.tokens(stackTokens)(
-      data.map( d =>
-        FluentUi.DefaultButton.className("Button-Style").text(d._1).onClick(_ => setTableData(d._2))
+      data.map(d =>
+        FluentUi.DefaultButton
+          .className("Button-Style")
+          .text(d._1)
+          .onClick(_ => setTableData(d._2))
       )
     )
 
-    //====================Search Bar==================================
+    // ====================Search Bar==================================
 
-    //Not sure what we can do with this
+    // Not sure what we can do with this
     val searchBar =
-      FluentUi.SearchBox.placeholder("Search").className("SearchBar-Style")
+      FluentUi.SearchBox
+        .placeholder("Search")
+        .className("SearchBar-Style")
         .onEscape(ev => console.log("custom escape called"))
         .onClear(ev => console.log("custom onclear called"))
-        .onChange((_ , newValue) => console.log("SearchBox onChange fired: " + newValue))
-        .onSearch(newValue => console.log("SearchBox onSearch fired: " + newValue))
+        .onChange((_, newValue) =>
+          console.log("SearchBox onChange fired: " + newValue)
+        )
+        .onSearch(newValue =>
+          console.log("SearchBox onSearch fired: " + newValue)
+        )
 
-    //================== Content======================================
+    // ================== Content======================================
 
-    //Above components like semesterButton, searchBar e.g. are only created into existence but not utilised yet.
-    //The below is where the components are actually utilised and can be rendered on screen in a desired format.
-    //Desired format is controlled by custom CSS - See landingPage.css in resources file
-    val selectionSection =  div(className := "content-container")(
+    // Above components like semesterButton, searchBar e.g. are only created into existence but not utilised yet.
+    // The below is where the components are actually utilised and can be rendered on screen in a desired format.
+    // Desired format is controlled by custom CSS - See landingPage.css in resources file
+    val selectionSection = div(className := "content-container")(
       div(className := "left")(
         welcome,
         div(className := "inner-left")(
@@ -148,38 +157,71 @@ object LandingPage {
         )
       ),
       div(className := "right")(
-         img(src := profilePic.asInstanceOf[String], className := "profile-pic", alt := "profilePic"),
-         span(props.username)
+        img(
+          src := profilePic.asInstanceOf[String],
+          className := "profile-pic",
+          alt := "profilePic"
+        ),
+        span(props.username)
       )
     )
 
-    //============================================Table===============================================
+    // ============================================Table===============================================
 
-    class TableItem(val key: Int, val student: String, val module1: String, val module2: String, val module3: String, val module4: String) extends js.Object
-
+    class TableItem(
+        val key: Int,
+        val student: String,
+        val module1: String,
+        val module2: String,
+        val module3: String,
+        val module4: String
+    ) extends js.Object
 
     val tableSection =
-      div(className:= "table-container")(
+      div(className := "table-container")(
         Table[TableItem]
           .bordered(true)
           .dataSource(
-            //tableData is retrieved from the state hooks - val (tableData , updateTableData) = useState(tableData1) - line 84
-            tableData.zipWithIndex.map(d =>  new TableItem(d._2 , d._1._1 , d._1._2 , d._1._3 , d._1._4 , d._1._5)).toJSArray
+            // tableData is retrieved from the state hooks - val (tableData , updateTableData) = useState(tableData1) - line 84
+            tableData.zipWithIndex
+              .map(d =>
+                new TableItem(d._2, d._1._1, d._1._2, d._1._3, d._1._4, d._1._5)
+              )
+              .toJSArray
           )
           .columnsVarargs(
-            //set the table columns name
-            ColumnType[TableItem]().setTitle("Student").setDataIndex("student").setKey("student"),
-            ColumnType[TableItem]().setTitle("Module 1").setDataIndex("module1").setKey("module1"),
-            ColumnType[TableItem]().setTitle("Module 2").setDataIndex("module2").setKey("module2"),
-            ColumnType[TableItem]().setTitle("Module 3").setDataIndex("module3").setKey("module3"),
-            ColumnType[TableItem]().setTitle("Module 4").setDataIndex("module4").setKey("module4"),
+            // set the table columns name
+            ColumnType[TableItem]()
+              .setTitle("Student")
+              .setDataIndex("student")
+              .setKey("student"),
+            ColumnType[TableItem]()
+              .setTitle("Module 1")
+              .setDataIndex("module1")
+              .setKey("module1"),
+            ColumnType[TableItem]()
+              .setTitle("Module 2")
+              .setDataIndex("module2")
+              .setKey("module2"),
+            ColumnType[TableItem]()
+              .setTitle("Module 3")
+              .setDataIndex("module3")
+              .setKey("module3"),
+            ColumnType[TableItem]()
+              .setTitle("Module 4")
+              .setDataIndex("module4")
+              .setKey("module4")
           )
       )
 
-    //============Export landing page===================
+    // ============Export landing page===================
 
-    //This will be invoked in App page
-    div(className:= "page-container")(NavBar.component() ,selectionSection , tableSection)
+    // This will be invoked in App page
+    div(className := "page-container")(
+      NavBar.component(),
+      selectionSection,
+      tableSection
+    )
   }
 
 }

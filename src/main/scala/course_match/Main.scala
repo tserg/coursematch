@@ -9,7 +9,6 @@ import slinky.web.ReactDOM
 import slinky.hot
 import org.scalajs.dom
 
-
 @JSImport("resources/index.css", JSImport.Default)
 @js.native
 object IndexCSS extends js.Object

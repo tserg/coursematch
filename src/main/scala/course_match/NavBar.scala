@@ -18,7 +18,7 @@ object NavBar {
     div(className := "NavBar")(
       span(className := "dot"),
       span(className := "dot"),
-      span(className := "dot"),
+      span(className := "dot")
     )
   }
 }

@@ -1,4 +1,3 @@
-
 package course_match
 
 import slinky.core.FunctionalComponent
@@ -14,13 +13,10 @@ import typings.antd.gridColMod.ColProps
 import typings.antd.useFormMod.FormInstance
 import typings.rcFieldForm.interfaceMod.{AggregationRule, FieldData}
 
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import typings.reactRouter.mod._
 import typings.reactRouterDom.components._
-
-
 
 @JSImport("antd/dist/antd.css", JSImport.Default)
 @js.native
@@ -37,17 +33,21 @@ object RegistrationPageCSS extends js.Object
   val registrationPageCSS = RegistrationPageCSS
 
   val component = FunctionalComponent[Props] { _ =>
-
-    //===============React State Hooks==========================
-    val (modules , updateCourseModules) = useState(Seq[(String, String, String, String, String)]())
-    val (counter , updateCounter) = useState(0)
+    // ===============React State Hooks==========================
+    val (modules, updateCourseModules) =
+      useState(Seq[(String, String, String, String, String)]())
+    val (counter, updateCounter) = useState(0)
     val (headerText, updateHeaderText) = useState("Enter your name")
-    val (user_name , updateUserName) = useState("")
+    val (user_name, updateUserName) = useState("")
 
-    //================Action taken after form submit for semester modules======================
-    def setCourseModules(courseModules: Values , form: FormInstance[Values]): Unit = {
+    // ================Action taken after form submit for semester modules======================
+    def setCourseModules(
+        courseModules: Values,
+        form: FormInstance[Values]
+    ): Unit = {
       form.resetFields()
-      val mods = modules :+ (user_name , courseModules.module1 , courseModules.module2 , courseModules.module3 , courseModules.module4)
+      val mods =
+        modules :+ (user_name, courseModules.module1, courseModules.module2, courseModules.module3, courseModules.module4)
       updateCourseModules(mods)
       updateCounter(counter + 1)
 
@@ -58,7 +58,7 @@ object RegistrationPageCSS extends js.Object
       }
     }
 
-    //===============Action taken after form submit for name==============================
+    // ===============Action taken after form submit for name==============================
     def setUserName(name: nameValue): Unit = {
       updateUserName(name.name)
       updateCounter(counter + 1)
@@ -69,71 +69,108 @@ object RegistrationPageCSS extends js.Object
 
     val instruction = h4(headerText)
 
-    //========================Crate form for name input===========================
+    // ========================Crate form for name input===========================
     class nameValue(val name: String) extends js.Object
     val nameForm: FormInstance[nameValue] = useForm[nameValue]().head
-    val userForm =  Form[nameValue]()
+    val userForm = Form[nameValue]()
       .form(nameForm)
       .labelCol(ColProps().setSpan(5))
       .wrapperCol(ColProps().setSpan(12))
-      .onFinish(name =>  setUserName(name))(
+      .onFinish(name => setUserName(name))(
         FormItem[nameValue]()
           .label("Name")
           .name("name")
-          .rulesVarargs(AggregationRule().setRequired(true).setMessage("Please input your name"))(
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(true)
+              .setMessage("Please input your name")
+          )(
             Input()
           ),
         FormItem[nameValue]().wrapperCol(ColProps().setSpan(12).setOffset(5))(
-          Button.`type`(antdStrings.primary).htmlType(antdStrings.submit)("Submit")
+          Button
+            .`type`(antdStrings.primary)
+            .htmlType(antdStrings.submit)("Submit")
         )
       )
 
-    //===================Create form for semester modules===========================
-    class Values(val module1: String , val module2: String , val module3: String  ,val module4: String ) extends js.Object
+    // ===================Create form for semester modules===========================
+    class Values(
+        val module1: String,
+        val module2: String,
+        val module3: String,
+        val module4: String
+    ) extends js.Object
     val form: FormInstance[Values] = useForm[Values]().head
     val tempForm = Form[Values]()
       .form(form)
       .labelCol(ColProps().setSpan(5))
       .wrapperCol(ColProps().setSpan(12))
-      .onFinish(mods =>  setCourseModules(mods , form))(
+      .onFinish(mods => setCourseModules(mods, form))(
         FormItem[Values]()
           .label("Module 1")
           .name("module1")
-          .rulesVarargs(AggregationRule().setRequired(false).setMessage("Please input your module"))(
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(false)
+              .setMessage("Please input your module")
+          )(
             Input()
-          ).initialValue("-"),
+          )
+          .initialValue("-"),
         FormItem[Values]()
           .label("Module 2")
           .name("module2")
-          .rulesVarargs(AggregationRule().setRequired(false).setMessage("Please input your module"))(
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(false)
+              .setMessage("Please input your module")
+          )(
             Input()
-          ).initialValue("-"),
+          )
+          .initialValue("-"),
         FormItem[Values]()
           .label("Module 3")
           .name("module3")
-          .rulesVarargs(AggregationRule().setRequired(false).setMessage("Please input your module"))(
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(false)
+              .setMessage("Please input your module")
+          )(
             Input()
-          ).initialValue("-"),
+          )
+          .initialValue("-"),
         FormItem[Values]()
           .label("Module 4")
           .name("module4")
-          .rulesVarargs(AggregationRule().setRequired(false).setMessage("Please input your module"))(
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(false)
+              .setMessage("Please input your module")
+          )(
             Input()
-          ).initialValue("-"),
-
+          )
+          .initialValue("-"),
         FormItem[Values]().wrapperCol(ColProps().setSpan(12).setOffset(5))(
-          Button.`type`(antdStrings.primary).htmlType(antdStrings.submit)("Submit")
+          Button
+            .`type`(antdStrings.primary)
+            .htmlType(antdStrings.submit)("Submit")
         )
       )
 
-
-      //Render different view based on counter count
-      //When user has submitted all his/her inputs, passed user name and modules data to landing page (counter = 4)
-      counter match {
-        case 0 => div(className := "r-container")( welcome , instruction , userForm)
-        case 4 => Route(RouteProps().setExact(true).setPath("/").setRender(_ => LandingPage(username = user_name , mods = modules)))
-        case _ => div(className := "r-container")(welcome , instruction, tempForm)
-      }
+    // Render different view based on counter count
+    // When user has submitted all his/her inputs, passed user name and modules data to landing page (counter = 4)
+    counter match {
+      case 0 => div(className := "r-container")(welcome, instruction, userForm)
+      case 4 =>
+        Route(
+          RouteProps()
+            .setExact(true)
+            .setPath("/")
+            .setRender(_ => LandingPage(username = user_name, mods = modules))
+        )
+      case _ => div(className := "r-container")(welcome, instruction, tempForm)
+    }
 
   }
 }
