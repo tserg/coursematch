@@ -54,7 +54,7 @@ object RegistrationPageCSS extends js.Object
 
       counter + 1 match {
         case 2 => updateHeaderText("AY2021-22 Semester 2")
-        case 3 => updateHeaderText("AY2021-23 Semester 1")
+        case 3 => updateHeaderText("AY2022-23 Semester 1")
         case _ => None
       }
     }
