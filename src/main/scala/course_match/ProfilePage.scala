@@ -10,37 +10,21 @@ import typings.officeUiFabricReact.stackTypesMod.IStackTokens
 import typings.antd.components.{List => AntList, _}
 import typings.antd.tableInterfaceMod.{ColumnGroupType, ColumnType}
 import typings.reactRouter.mod._
-import typings.reactRouterDom.components.{BrowserRouter, Route}
+import typings.reactRouterDom.components.{ BrowserRouter, Route }
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import js.JSConverters._
 
-@JSImport("resources/LandingPage.css", JSImport.Default)
-@js.native
-object LandingPageCSS extends js.Object
-
-@JSImport("resources/profilePicture.svg", JSImport.Default)
-@js.native
-object profilePic extends js.Object
-
-@JSImport("antd/dist/antd.css", JSImport.Default)
-@js.native
-object AntCSS extends js.Any
 
 @react
-object LandingPage {
+object ProfilePage {
 
   case class Props(
       username: String,
       user_email: String,
       mods: Seq[(String, String, String, String, String, String)]
   )
-
-  // =================CSS=========================
-
-  val landingPagecss = LandingPageCSS
-  val antCss = AntCSS
 
   // =================Button Text==========================
   val data = Seq(
@@ -54,28 +38,20 @@ object LandingPage {
 
   // Table Data for AY2021-22 Semester 1
   val tableData1 = Seq(
-    ("John Tan", "john@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Kelly Chia", "kelly@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Lee James", "james@u.nus.edu", "CS5100", "CS5200", "-", "-"),
-    ("Sue", "sue@u.nus.edu", "IT5100A", "IT5100B", "-", "-")
+    ("", "", "", "", "", ""),
+
   )
 
   // Table Data for AY2021-22 Semester 2
   val tableData2 = Seq(
-    ("Chris1", "chris@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Gary1", "gary@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Felicia1", "felicia@u.nus.edu", "CS5100", "CS5200", "-", "-")
+    ("", "", "", "", "", ""),
+
   )
 
   // Table Data for AY2021-23 Semester 1
   val tableData3 = Seq(
-    ("John Tan", "john@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Kelly Chia", "kelly@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Lee James", "james@u.nus.edu", "CS5100", "CS5200", "-", "-"),
-    ("Sue", "sue@u.nus.edu", "IT5100A", "IT5100B", "-", "-"),
-    ("Chris1", "chris@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Gary1", "gary@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Felicia1", "felicia@u.nus.edu", "CS5100", "CS5200", "-", "-")
+    ("", "", "", "", "", ""),
+
   )
 
   // ====================React Hooks Component==================
@@ -104,9 +80,9 @@ object LandingPage {
       () => {
         props.mods.zipWithIndex.map(d =>
           d._2 match {
-            case 0 => updateTableData1(tableData_1 :+ d._1)
-            case 1 => updateTableData2(tableData_2 :+ d._1)
-            case 2 => updateTableData3(tableData_3 :+ d._1)
+            case 0 => updateTableData1(Seq(d._1))
+            case 1 => updateTableData2(Seq(d._1))
+            case 2 => updateTableData3(Seq(d._1))
           }
         )
         updateTableData(tableData_1)
@@ -132,38 +108,23 @@ object LandingPage {
       )
     )
 
-    // ====================Search Bar==================================
-
-    // Not sure what we can do with this
-    val searchBar =
-      FluentUi.SearchBox
-        .placeholder("Search")
-        .className("SearchBar-Style")
-        .onEscape(ev => console.log("custom escape called"))
-        .onClear(ev => console.log("custom onclear called"))
-        .onChange((_, newValue) =>
-          console.log("SearchBox onChange fired: " + newValue)
-        )
-        .onSearch(newValue =>
-          console.log("SearchBox onSearch fired: " + newValue)
-        )
-
     // ================== Content======================================
 
     // Above components like semesterButton, searchBar e.g. are only created into existence but not utilised yet.
     // The below is where the components are actually utilised and can be rendered on screen in a desired format.
     // Desired format is controlled by custom CSS - See landingPage.css in resources file
-
-    val profile = div(h2("Profile"))
-
-    val profileButton = Button("View Profile").onClick(_ => updateCounter(1))
+    
+    val profile = div(className := "page-container")(
+      h3("About me"),
+      p("Hey there! I'm an aspiring software engineer. Joined NUS MComp in Jan 2021")
+    )
 
     val selectionSection = div(className := "content-container")(
       div(className := "left")(
         welcome,
         div(className := "inner-left")(
           semesterButton,
-          searchBar
+          profile
         )
       ),
       div(className := "right")(
@@ -173,8 +134,7 @@ object LandingPage {
           alt := "profilePic"
         ),
         span(props.username),
-        span(props.user_email),
-        profileButton
+        span(props.user_email)
       )
     )
 
@@ -247,28 +207,5 @@ object LandingPage {
       selectionSection,
       tableSection
     )
-
-    counter match {
-      case 0 =>
-        div(className := "page-container")(
-          NavBar.component(),
-          selectionSection,
-          tableSection
-        )
-      case 1 =>
-        Route(
-          RouteProps()
-            .setExact(true)
-            .setPath("/")
-            .setRender(_ =>
-              ProfilePage(
-                username = props.username,
-                user_email = props.user_email,
-                mods = props.mods
-              )
-            )
-        )
-    }
   }
-
 }
