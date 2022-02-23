@@ -35,10 +35,11 @@ object RegistrationPageCSS extends js.Object
   val component = FunctionalComponent[Props] { _ =>
     // ===============React State Hooks==========================
     val (modules, updateCourseModules) =
-      useState(Seq[(String, String, String, String, String)]())
+      useState(Seq[(String, String, String, String, String, String)]())
     val (counter, updateCounter) = useState(0)
-    val (headerText, updateHeaderText) = useState("Enter your name")
+    val (headerText, updateHeaderText) = useState("Enter your name and email")
     val (user_name, updateUserName) = useState("")
+    val (user_email, updateUserEmail) = useState("")
 
     // ================Action taken after form submit for semester modules======================
     def setCourseModules(
@@ -47,7 +48,7 @@ object RegistrationPageCSS extends js.Object
     ): Unit = {
       form.resetFields()
       val mods =
-        modules :+ (user_name, courseModules.module1, courseModules.module2, courseModules.module3, courseModules.module4)
+        modules :+ (user_name, user_email, courseModules.module1, courseModules.module2, courseModules.module3, courseModules.module4)
       updateCourseModules(mods)
       updateCounter(counter + 1)
 
@@ -58,9 +59,10 @@ object RegistrationPageCSS extends js.Object
       }
     }
 
-    // ===============Action taken after form submit for name==============================
-    def setUserName(name: nameValue): Unit = {
-      updateUserName(name.name)
+    // ===============Action taken after form submit for name and email==============================
+    def setUserDetails(details: userValues): Unit = {
+      updateUserName(details.name)
+      updateUserEmail(details.email)
       updateCounter(counter + 1)
       updateHeaderText("AY2021-22 Semester 1")
     }
@@ -70,14 +72,17 @@ object RegistrationPageCSS extends js.Object
     val instruction = h4(headerText)
 
     // ========================Crate form for name input===========================
-    class nameValue(val name: String) extends js.Object
-    val nameForm: FormInstance[nameValue] = useForm[nameValue]().head
-    val userForm = Form[nameValue]()
-      .form(nameForm)
+    class userValues(
+        val name: String,
+        val email: String
+    ) extends js.Object
+    val userDetailsForm: FormInstance[userValues] = useForm[userValues]().head
+    val userForm = Form[userValues]()
+      .form(userDetailsForm)
       .labelCol(ColProps().setSpan(5))
       .wrapperCol(ColProps().setSpan(12))
-      .onFinish(name => setUserName(name))(
-        FormItem[nameValue]()
+      .onFinish(details => setUserDetails(details))(
+        FormItem[userValues]()
           .label("Name")
           .name("name")
           .rulesVarargs(
@@ -87,7 +92,17 @@ object RegistrationPageCSS extends js.Object
           )(
             Input()
           ),
-        FormItem[nameValue]().wrapperCol(ColProps().setSpan(12).setOffset(5))(
+        FormItem[userValues]()
+          .label("Email")
+          .name("email")
+          .rulesVarargs(
+            AggregationRule()
+              .setRequired(true)
+              .setMessage("Please input your email")
+          )(
+            Input()
+          ),
+        FormItem[userValues]().wrapperCol(ColProps().setSpan(12).setOffset(5))(
           Button
             .`type`(antdStrings.primary)
             .htmlType(antdStrings.submit)("Submit")
@@ -167,7 +182,13 @@ object RegistrationPageCSS extends js.Object
           RouteProps()
             .setExact(true)
             .setPath("/")
-            .setRender(_ => LandingPage(username = user_name, mods = modules))
+            .setRender(_ =>
+              LandingPage(
+                username = user_name,
+                user_email = user_email,
+                mods = modules
+              )
+            )
         )
       case _ => div(className := "r-container")(welcome, instruction, tempForm)
     }

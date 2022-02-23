@@ -31,7 +31,8 @@ object LandingPage {
 
   case class Props(
       username: String,
-      mods: Seq[(String, String, String, String, String)]
+      user_email: String,
+      mods: Seq[(String, String, String, String, String, String)]
   )
 
   // =================CSS=========================
@@ -51,28 +52,28 @@ object LandingPage {
 
   // Table Data for AY2021-22 Semester 1
   val tableData1 = Seq(
-    ("John Tan", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Kelly Chia", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Lee James", "CS5100", "CS5200", "-", "-"),
-    ("Sue", "IT5100A", "IT5100B", "-", "-")
+    ("John Tan", "john@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Kelly Chia", "kelly@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Lee James", "james@u.nus.edu", "CS5100", "CS5200", "-", "-"),
+    ("Sue", "sue@u.nus.edu", "IT5100A", "IT5100B", "-", "-")
   )
 
   // Table Data for AY2021-22 Semester 2
   val tableData2 = Seq(
-    ("Chris1", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Gary1", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Felicia1", "CS5100", "CS5200", "-", "-")
+    ("Chris1", "chris@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Gary1", "gary@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Felicia1", "felicia@u.nus.edu", "CS5100", "CS5200", "-", "-")
   )
 
   // Table Data for AY2021-23 Semester 1
   val tableData3 = Seq(
-    ("John Tan", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Kelly Chia", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Lee James", "CS5100", "CS5200", "-", "-"),
-    ("Sue", "IT5100A", "IT5100B", "-", "-"),
-    ("Chris1", "CS5219", "IT5001A", "IT5100B", "-"),
-    ("Gary1", "CS5219", "IT5001A", "IT5100B", "CS5218"),
-    ("Felicia1", "CS5100", "CS5200", "-", "-")
+    ("John Tan", "john@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Kelly Chia", "kelly@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Lee James", "james@u.nus.edu", "CS5100", "CS5200", "-", "-"),
+    ("Sue", "sue@u.nus.edu", "IT5100A", "IT5100B", "-", "-"),
+    ("Chris1", "chris@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "-"),
+    ("Gary1", "gary@u.nus.edu", "CS5219", "IT5001A", "IT5100B", "CS5218"),
+    ("Felicia1", "felicia@u.nus.edu", "CS5100", "CS5200", "-", "-")
   )
 
   // ====================React Hooks Component==================
@@ -162,7 +163,8 @@ object LandingPage {
           className := "profile-pic",
           alt := "profilePic"
         ),
-        span(props.username)
+        span(props.username),
+        span(props.user_email)
       )
     )
 
@@ -171,6 +173,7 @@ object LandingPage {
     class TableItem(
         val key: Int,
         val student: String,
+        val email: String,
         val module1: String,
         val module2: String,
         val module3: String,
@@ -185,7 +188,15 @@ object LandingPage {
             // tableData is retrieved from the state hooks - val (tableData , updateTableData) = useState(tableData1) - line 84
             tableData.zipWithIndex
               .map(d =>
-                new TableItem(d._2, d._1._1, d._1._2, d._1._3, d._1._4, d._1._5)
+                new TableItem(
+                  d._2,
+                  d._1._1,
+                  d._1._2,
+                  d._1._3,
+                  d._1._4,
+                  d._1._5,
+                  d._1._6
+                )
               )
               .toJSArray
           )
@@ -195,6 +206,10 @@ object LandingPage {
               .setTitle("Student")
               .setDataIndex("student")
               .setKey("student"),
+            ColumnType[TableItem]()
+              .setTitle("Email")
+              .setDataIndex("email")
+              .setKey("email"),
             ColumnType[TableItem]()
               .setTitle("Module 1")
               .setDataIndex("module1")
