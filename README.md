@@ -33,6 +33,6 @@
 
 ### Linting
 
-- Run `sbt scalafmt` to run the linter and fix formatting issues.
+- Run `sbt scalafmt` to run the linter and fix formatting issues.git 
 
 
