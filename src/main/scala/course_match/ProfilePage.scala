@@ -30,7 +30,7 @@ object ProfilePage {
   val data = Seq(
     ("AY2021-22 Semester 1", 1),
     ("AY2021-22 Semester 2", 2),
-    ("AY2021-23 Semester 1", 3)
+    ("AY2022-23 Semester 1", 3)
   )
 
   // ==================Simulated Table Data============================
